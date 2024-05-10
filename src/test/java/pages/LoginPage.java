@@ -18,8 +18,6 @@ public class LoginPage extends BaseTest {
         PageFactory.initElements(new AppiumFieldDecorator(AppiumDriverManager.getInstance().getDriver(), Duration.ofSeconds(10L)),this);
     }
 
- //   MobileElement txtUserName = (MobileElement) driver.findElementsByAccessibilityId("test-Username");
-
     @AndroidFindBy(accessibility = "test-Username")
     private MobileElement txtUserName;
 
@@ -51,7 +49,6 @@ public class LoginPage extends BaseTest {
     }
 
     public void clickLogin(){
-        //verify click
         util.click(btnClick);
     }
 

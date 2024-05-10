@@ -20,7 +20,7 @@ public class BaseTest {
    public void createDriver() throws MalformedURLException {
         try {
 
-
+            //defined capabilities
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("automationName", "UiAutomator2");
             caps.setCapability("platformName", "Android");
