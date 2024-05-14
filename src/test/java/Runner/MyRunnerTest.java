@@ -11,8 +11,6 @@ import org.junit.runner.RunWith;
         monochrome = true,
         glue={"stepdef"},
         features="src/test/resources/FeatureFiles/LoginTest.feature"
-
-
 )
 
 public class MyRunnerTest {

@@ -30,10 +30,6 @@ public class LoginPage extends BaseTest {
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Error message\"]//child::android.widget.TextView")
     private MobileElement errMsg;
 
-    //android.widget.TextView[@text="Username and password do not match any user in this service."]
-
-    //android.view.ViewGroup[@content-desc="test-Error message"]//child::android.widget.TextView
-
     @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"PRODUCTS\"]")
     private MobileElement titleProduct;
 
