@@ -33,26 +33,48 @@ public class LoginPage extends BaseTest {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"PRODUCTS\"]")
     private MobileElement titleProduct;
 
+    /**
+     * This method enters the username in text field
+     *
+     * @param name
+     */
 
     public void enterUserName(String name){
         util.type(txtUserName,name);
 
     }
 
+    /**
+     *This method enters the password in text field
+     * @param password
+     */
+
     public void enterUserPassword(String password){
         util.type(txtUserPassword,password);
 
     }
 
+    /**
+     * This method clicks on login button
+     */
     public void clickLogin(){
         util.click(btnClick);
     }
 
+    /**
+     * This method verifies if error message is displayed
+     * @param orgErrMsg
+     * @param text
+     */
     public void verifyError(String orgErrMsg, String text ){
         util.exist(errMsg, text);
 
     }
 
+    /**
+     * This metod verifies if product page is displayed
+     * @param product
+     */
     public void verifyProduct(String product){
         util.exist(titleProduct, product);
     }

@@ -1,6 +1,7 @@
 package base;
 
 import DriverManager.AppiumDriverManager;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.net.MalformedURLException;
@@ -11,16 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseTest {
 
-   protected AndroidDriver driver;
+   protected AndroidDriver<MobileElement> driver;
    public static WebDriverWait waitVar = null;
- // public BaseTest(){
- //      PageFactory.initElements(new AppiumFieldDecorator(driver),this);
- //  }
 
    public void createDriver() throws MalformedURLException {
         try {
 
-            //defined capabilities
+            //defined desired capabilities
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("automationName", "UiAutomator2");
             caps.setCapability("platformName", "Android");
@@ -31,8 +29,7 @@ public class BaseTest {
             caps.setCapability("app", "C:\\Users\\NAMO\\IdeaProjects\\NomoInterview\\src\\test\\resources\\App\\demo.apk");
             caps.setCapability("appActivity", "com.swaglabsmobileapp.MainActivity");
 
-            driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
-            //String sessionId = driver.getSessionId().toString();
+            driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), caps);
             AppiumDriverManager.getInstance().setDriver(driver);
 
             waitVar = new WebDriverWait(driver, 90);
